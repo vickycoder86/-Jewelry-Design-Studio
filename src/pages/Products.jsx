@@ -108,8 +108,8 @@ const Products = () => {
 
   return (
     <>
-      <h1>Diamond Products</h1>
-      <div style={{ display: "flex", gap: "20px" }}>
+      {/* <h1>Diamond Products</h1> */}
+      <div style={{ display: "flex", gap: "20px",margin: "20px" }}>
         <Sidebar
           onSearch={handleSearch}
           onShapeSelect={handleShapeSelect}

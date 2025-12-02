@@ -4,6 +4,8 @@ export const productContext = createContext();
 
 export default function MainContext({ children }) {
   const [products, setProducts] = useState([]);
+
+
   const globalObj = { products, setProducts };
 
   return (

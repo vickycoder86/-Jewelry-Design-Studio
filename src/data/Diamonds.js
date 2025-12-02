@@ -7,7 +7,7 @@ const Diamonds=[
     clarity: "VVS2",
     cut: "Good",
     lab: "IGI",
-    priceAUD: 9381,
+    priceAUD: 9650,
     reportNumber: "IGI-2025-0001",
     images: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Utf_m8oer9WQBsDq2jpdVQ9-lqdvgMbO_w&s",
     quickShip: true
@@ -20,7 +20,7 @@ const Diamonds=[
     clarity: "FL",
     cut: "Excellent",
     lab: "GAI",
-    priceAUD: 9001,
+    priceAUD: 9000,
     reportNumber: "IGI-2025-0002",
     images: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Utf_m8oer9WQBsDq2jpdVQ9-lqdvgMbO_w&s",
     quickShip: false
@@ -33,7 +33,7 @@ const Diamonds=[
     clarity: "IF",
     cut: "Very Good",
     lab: "AGS",
-    priceAUD: 9250,
+    priceAUD: 12250,
     reportNumber: "IGI-2025-0003",
     images: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Utf_m8oer9WQBsDq2jpdVQ9-lqdvgMbO_w&s",
     quickShip: false

@@ -5,9 +5,48 @@ import { useParams, useNavigate } from "react-router-dom";
 const DiamondDesign = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const diamond = Diamonds.find((d) => d.id === id);
 
   if (!diamond) return <p>Diamond not found</p>;
+
+
+ const handleSelectSetting = (settingName) => {
+  const selectedData = {
+    diamondId: diamond.id,
+    carat: diamond.carat,
+    price: diamond.priceAUD,
+    shape: diamond.shape,
+    color: diamond.color,
+    clarity: diamond.clarity,
+    cut: diamond.cut,
+    lab: diamond.lab,
+    setting: settingName,
+    image: diamond.images,
+  };
+
+  localStorage.setItem("selectedDiamond", JSON.stringify(selectedData));
+  navigate("/summary");
+};
+
+const handleSelectSkipSetting = () => {
+  const selectedData = {
+    diamondId: diamond.id,
+    carat: diamond.carat,
+    price: diamond.priceAUD,
+    shape: diamond.shape,
+    color: diamond.color,
+    clarity: diamond.clarity,
+    cut: diamond.cut,
+    lab: diamond.lab,
+    setting: "No setting chosen",
+    image: diamond.images,
+  };
+
+  localStorage.setItem("selectedDiamond", JSON.stringify(selectedData));
+  navigate("/summary");
+};
+
 
   return (
     <div
@@ -91,6 +130,7 @@ const DiamondDesign = () => {
           {["Solitaire", "Halo", "Three-Stone", "Bezel"].map((shape) => (
             <button
               key={shape}
+              onClick={() => handleSelectSetting(shape)}
               style={{
                 padding: "8px 16px",
                 borderRadius: "8px",
@@ -136,6 +176,7 @@ const DiamondDesign = () => {
               cursor: "pointer",
               transition: "background 0.2s",
             }}
+            onClick={handleSelectSkipSetting}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#059669")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "#10b981")}
           >

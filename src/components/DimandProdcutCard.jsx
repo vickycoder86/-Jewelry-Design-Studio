@@ -60,7 +60,7 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
           fontWeight: "700",
           color: "#0b8a55",
           margin: "4px 0",
-          textAlign: "center",
+          // textAlign: "center",
         }}
       >
         AUD ${diamond.priceAUD}
