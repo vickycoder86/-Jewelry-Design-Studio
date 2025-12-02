@@ -121,7 +121,7 @@ const Sidebar = ({
               key={shape}
               onClick={handleShapeClick(shape)}
               style={{
-                padding: "6px 8px",
+                padding: "8px 13px",
                 borderRadius: "8px",
                 border: "1px solid #bbb",
                 background: shapeFilter === shape ? "#2563eb" : "#f3f3f3",
@@ -144,6 +144,7 @@ const Sidebar = ({
             fontWeight: "600",
             color: "#333",
             marginBottom: "5px",
+            marginTop: "3px",
           }}
         >
           Carat
@@ -162,7 +163,7 @@ const Sidebar = ({
               fontSize: "13px",
             }}
           />
-
+          <span>-</span>
           <input
             type="number"
             min={0}
@@ -186,6 +187,7 @@ const Sidebar = ({
             fontWeight: "600",
             color: "#333",
             marginBottom: "5px",
+            marginTop: "15px",
           }}
         >
           Color

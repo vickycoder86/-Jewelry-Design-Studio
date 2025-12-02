@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DimandProdcutCard = ({ diamond, onQuickView }) => {
   return (
@@ -85,7 +86,8 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
       </button>
 
       <div style={{ display: "flex", gap: "6px", marginTop: "4px" }}>
-        <button
+       <Link to={`/diamonddesign/${diamond.id}`}>
+       <button
           style={{
             flex: 1,
             padding: "8px",
@@ -100,9 +102,11 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
           }}
           onMouseEnter={(e) => (e.currentTarget.style.background = "#059669")}
           onMouseLeave={(e) => (e.currentTarget.style.background = "#10b981")}
+
         >
           Add to Cart
         </button>
+        </Link>
         <button
           style={{
             flex: 1,
