@@ -4,7 +4,7 @@ const DiamondQuickViewModal = ({ diamond, onClose }) => {
   if (!diamond) return null;
 
   return (
-    // Modal overlay
+   
     <div
       style={{
         position: "fixed",
@@ -13,16 +13,16 @@ const DiamondQuickViewModal = ({ diamond, onClose }) => {
         width: "100%",
         height: "100%",
         background: "rgba(0,0,0,0.5)",
-        display: "flex",
+        display: "flex",  
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
       }}
-      onClick={onClose} // close if clicked outside
+      onClick={onClose} 
     >
-      {/* Modal content */}
+      
       <div
-        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+        onClick={(e) => e.stopPropagation()} 
         style={{
           width: "280px",
           background: "#fff",
@@ -35,7 +35,7 @@ const DiamondQuickViewModal = ({ diamond, onClose }) => {
           position: "relative",
         }}
       >
-        {/* Close button */}
+       
         <button
           onClick={onClose}
           style={{
@@ -52,15 +52,16 @@ const DiamondQuickViewModal = ({ diamond, onClose }) => {
           ×
         </button>
 
-        {/* Diamond Info */}
+        
         <img
           src={diamond.images}
           alt={diamond.shape}
           style={{
             width: "100%",
-            height: "140px",
+            height: "180px",
             objectFit: "cover",
             borderRadius: "8px",
+            
           }}
         />
         <h2

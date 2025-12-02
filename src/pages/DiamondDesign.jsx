@@ -60,7 +60,7 @@ const handleSelectSkipSetting = () => {
         flexWrap: "wrap",
       }}
     >
-      {/* Diamond Card */}
+      
       <div
         style={{
           display: "flex",
@@ -75,7 +75,7 @@ const handleSelectSkipSetting = () => {
           height: "100%",
         }}
       >
-        {/* Image */}
+      
         <div style={{ width: "100%", height: "250px", overflow: "hidden" }}>
           <img
             src={diamond.images}
@@ -91,7 +91,7 @@ const handleSelectSkipSetting = () => {
           />
         </div>
 
-        {/* Details */}
+     
         <div style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
           <h2 style={{ margin: 0, color: "#333" }}>{diamond.id}</h2>
           <p style={{ margin: 0, fontWeight: "500" }}>
@@ -120,7 +120,7 @@ const handleSelectSkipSetting = () => {
         </div>
       </div>
 
-      {/* Settings & Actions */}
+      
       <div style={{ maxWidth: "400px", width: "100%", display: "flex", flexDirection: "column", gap: "20px" }}>
         <h3 style={{ marginBottom: "10px" }}>
           Choose a Setting for {diamond.id} ({diamond.carat} ct)

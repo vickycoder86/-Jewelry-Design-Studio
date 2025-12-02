@@ -14,6 +14,8 @@ const Products = () => {
   const [cutFilter, setCutFilter] = useState("");
   const [labFilter, setLabFilter] = useState("");
   const [quickShipFilter, setQuickShipFilter] = useState(false);
+  const [caratMin, setCaratMin] = useState("");
+  const [caratMax, setCaratMax] = useState("");
 
   // Search handler
   const handleSearch = (text) => {
@@ -28,7 +30,7 @@ const Products = () => {
       return;
     }
   };
-   // Color handler
+  // Color handler
   const handleColorSelect = (color) => {
     setColorFilter(color);
 
@@ -56,7 +58,7 @@ const Products = () => {
       return;
     }
   };
-//lab handler
+  //lab handler
   const handleLabSelect = (lab) => {
     setLabFilter(lab);
     if (lab === "all") {
@@ -64,7 +66,12 @@ const Products = () => {
       return;
     }
   };
-// Final filtering logic
+  //carat range handler
+  const handleCaratRange = (min, max) => {
+    setCaratMin(min);
+    setCaratMax(max);
+  };
+  // Final filtering logic
   const finalFilteredData = Diamonds.filter((diamond) => {
     const matchSearch = diamond.id.toUpperCase().includes(search.toUpperCase());
 
@@ -93,6 +100,10 @@ const Products = () => {
       !labFilter ||
       diamond.lab.toLowerCase() === labFilter.toLowerCase();
 
+    const matchCarat =
+      (!caratMin || diamond.carat >= parseFloat(caratMin)) &&
+      (!caratMax || diamond.carat <= parseFloat(caratMax));
+
     const matchQuickShip = !quickShipFilter || diamond.quickShip === true;
 
     return (
@@ -102,14 +113,15 @@ const Products = () => {
       matchClarity &&
       matchCut &&
       matchLab &&
-      matchQuickShip
+      matchQuickShip &&
+      matchCarat
     );
   });
 
   return (
     <>
       {/* <h1>Diamond Products</h1> */}
-      <div style={{ display: "flex", gap: "20px",margin: "20px" }}>
+      <div style={{ display: "flex", gap: "20px", margin: "20px" }}>
         <Sidebar
           onSearch={handleSearch}
           onShapeSelect={handleShapeSelect}
@@ -118,10 +130,11 @@ const Products = () => {
           onCutSelect={handleCutSelect}
           onLabSelect={handleLabSelect}
           onQuickShipToggle={setQuickShipFilter}
+          onCaratRange={handleCaratRange}
         />
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
-          <div>Found:{finalFilteredData.length}</div>
+          {/* <div>Found:{finalFilteredData.length}</div> */}
 
           {finalFilteredData &&
             finalFilteredData.map((diamond) => (
@@ -134,11 +147,11 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Modal rendered on top of page */}
+      
       {selectedDiamond && (
         <DiamondQuickViewModal
           diamond={selectedDiamond}
-          onClose={() => setSelectedDiamond(null)} // Close modal
+          onClose={() => setSelectedDiamond(null)} 
         />
       )}
     </>

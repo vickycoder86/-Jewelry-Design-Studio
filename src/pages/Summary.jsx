@@ -23,15 +23,15 @@ const Summary = () => {
  
   const existingOrders = JSON.parse(localStorage.getItem("finalOrder")) || [];
 
-  // Add new orderr to array
+ 
   const finalOrder = [...existingOrders, orders];
 
-  // Save back to localStorage
+  
   localStorage.setItem("finalOrder", JSON.stringify(finalOrder));
 
   alert(`order is placed sucessfully with oreder no ${orders.orderDate}`);
 
-  navigate("/");
+  navigate("/myorders");
 };
 
   return (

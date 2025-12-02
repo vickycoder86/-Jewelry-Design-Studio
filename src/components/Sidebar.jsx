@@ -9,13 +9,16 @@ const Sidebar = ({
   onCutSelect,
   onLabSelect,
   onQuickShipToggle,
+  onCaratRange,
 }) => {
   const [searchText, setSearchText] = useState("");
   const [shapeFilter, setShapeFilter] = useState("");
   const [colorFilter, setColorFilter] = useState("");
   const [clarityFilter, setClarityFilter] = useState("");
   const [cutFilter, setCutFilter] = useState("");
-  const [labFilter, setLabFilter] = useState("");
+  const [labFilter, setLabFilter] = useState("all");
+  const [caratMin, setCaratMin] = useState("");
+  const [caratMax, setCaratMax] = useState("");
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
@@ -50,12 +53,23 @@ const Sidebar = ({
   };
   const handleQuickShipToggle = (e) => {
     if (onQuickShipToggle) onQuickShipToggle(e.target.checked);
-  }
+  };
+  const handleCaratMin = (e) => {
+    const value = e.target.value;
+    setCaratMin(value);
+    onCaratRange && onCaratRange(value, caratMax);
+  };
+
+  const handleCaratMax = (e) => {
+    const value = e.target.value;
+    setCaratMax(value);
+    onCaratRange && onCaratRange(caratMin, value);
+  };
 
   return (
     <div
       style={{
-        width: "210px",
+        width: "250px",
         padding: "14px",
         background: "#ffffff",
         boxShadow: "0 3px 10px rgba(0,0,0,0.08)",
@@ -65,7 +79,7 @@ const Sidebar = ({
         gap: "5px",
       }}
     >
-      {/* Search */}
+      
       <div>
         <h5
           style={{
@@ -95,7 +109,7 @@ const Sidebar = ({
         />
       </div>
 
-      {/* Shape */}
+      
       <div>
         <h5
           style={{
@@ -136,7 +150,7 @@ const Sidebar = ({
         </div>
       </div>
 
-      {/* Carat */}
+      
       <div>
         <h5
           style={{
@@ -152,9 +166,12 @@ const Sidebar = ({
 
         <div style={{ display: "flex", gap: "4px" }}>
           <input
-            type="number"
+            placeholder="Min"
+            value={caratMin}
+            onChange={handleCaratMin}
             min={0}
             max={5}
+            step="0.01" 
             style={{
               width: "100%",
               padding: "8px",
@@ -166,8 +183,12 @@ const Sidebar = ({
           <span>-</span>
           <input
             type="number"
+            placeholder="Max"
+            value={caratMax}
+            onChange={handleCaratMax}
             min={0}
             max={5}
+            step="0.01"
             style={{
               width: "100%",
               padding: "8px",
@@ -179,7 +200,7 @@ const Sidebar = ({
         </div>
       </div>
 
-      {/* Color */}
+      
       <div>
         <h5
           style={{
@@ -211,7 +232,7 @@ const Sidebar = ({
         </select>
       </div>
 
-      {/* Clarity */}
+     
       <div>
         <h5
           style={{
@@ -243,7 +264,7 @@ const Sidebar = ({
         </select>
       </div>
 
-      {/* Cut */}
+ 
       <div>
         <h5
           style={{
@@ -274,7 +295,7 @@ const Sidebar = ({
         </select>
       </div>
 
-      {/* Labs */}
+      
       <div>
         <h5
           style={{
