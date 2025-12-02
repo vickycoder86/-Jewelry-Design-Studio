@@ -18,6 +18,10 @@ If you are developing a production application, we recommend using TypeScript wi
 
 Frontend Interview Task — Jewelry Design Studio
 
+Deploy link:-
+
+https://jewelrydesignstudiobyvijay.netlify.app/
+
 Tech used:-React JS
 Css:-Plain CSS
 state management:-Context Api
