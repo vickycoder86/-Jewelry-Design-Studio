@@ -15,3 +15,32 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 # -Jewelry-Design-Studio -->
+
+created jewelry design studio
+
+Tech used:-React JS
+Css:-Plain CSS
+state management:-Context Api
+storage:-local storage(brower)
+database:-locally created
+
+#Components:-
+1.Header:-Top navigation and branding
+2.Sidebar:-Filters for diamonds (shape, color, clarity, cut, etc.)
+3.Footers:Basic footer layout
+4.DiamandProductCard:-Displays individual diamond details
+
+#Pages:-
+1.Products:-All diamond listings with filters
+2.Diamond Quick view:-Fast preview with specifications
+3.Diamond Design:-Detailed design page with options(setting)
+4.Summary:-Shows selected diamond and settings before checkout
+5.My OrderPage:-Displays all completed orders stored in localStorage
+
+#Functionality:-
+1.Render all product card
+2.searching
+3.filter
+4.Price range(min to max)
+5.search(with orderID)
+3.Qucik preview(modal)
