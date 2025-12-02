@@ -13,6 +13,7 @@ const Products = () => {
   const [clarityFilter, setClarityFilter] = useState("");
   const [cutFilter, setCutFilter] = useState("");
   const [labFilter, setLabFilter] = useState("");
+  const [quickShipFilter, setQuickShipFilter] = useState(false);
 
   // Search handler
   const handleSearch = (text) => {
@@ -27,6 +28,7 @@ const Products = () => {
       return;
     }
   };
+   // Color handler
   const handleColorSelect = (color) => {
     setColorFilter(color);
 
@@ -35,6 +37,7 @@ const Products = () => {
       return;
     }
   };
+  //clarity handler
   const handleClariatySelect = (clarity) => {
     setClarityFilter(clarity);
 
@@ -43,6 +46,7 @@ const Products = () => {
       return;
     }
   };
+  //cut handler
 
   const handleCutSelect = (cut) => {
     setCutFilter(cut);
@@ -52,7 +56,7 @@ const Products = () => {
       return;
     }
   };
-
+//lab handler
   const handleLabSelect = (lab) => {
     setLabFilter(lab);
     if (lab === "all") {
@@ -60,7 +64,7 @@ const Products = () => {
       return;
     }
   };
-
+// Final filtering logic
   const finalFilteredData = Diamonds.filter((diamond) => {
     const matchSearch = diamond.id.toUpperCase().includes(search.toUpperCase());
 
@@ -89,13 +93,16 @@ const Products = () => {
       !labFilter ||
       diamond.lab.toLowerCase() === labFilter.toLowerCase();
 
+    const matchQuickShip = !quickShipFilter || diamond.quickShip === true;
+
     return (
       matchSearch &&
       matchShape &&
       matchColor &&
       matchClarity &&
       matchCut &&
-      matchLab
+      matchLab &&
+      matchQuickShip
     );
   });
 
@@ -110,6 +117,7 @@ const Products = () => {
           onClariatySelect={handleClariatySelect}
           onCutSelect={handleCutSelect}
           onLabSelect={handleLabSelect}
+          onQuickShipToggle={setQuickShipFilter}
         />
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>

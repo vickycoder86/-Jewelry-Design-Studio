@@ -10,7 +10,7 @@ const Diamonds=[
     priceAUD: 9381,
     reportNumber: "IGI-2025-0001",
     images: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Utf_m8oer9WQBsDq2jpdVQ9-lqdvgMbO_w&s",
-    quickShip: false
+    quickShip: true
   },
   {
     id: "AUD9002",
@@ -49,7 +49,7 @@ const Diamonds=[
     priceAUD: 14200,
     reportNumber: "IGI-2025-0004",
     images: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Utf_m8oer9WQBsDq2jpdVQ9-lqdvgMbO_w&s",
-    quickShip: false
+    quickShip: true
   },
   
 

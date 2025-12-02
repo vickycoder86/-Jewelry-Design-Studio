@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import Diamonds from "../data/Diamonds";
 
-const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSelect,onLabSelect  }) => {
+const Sidebar = ({
+  onSearch,
+  onShapeSelect,
+  oncolorSelect,
+  onClariatySelect,
+  onCutSelect,
+  onLabSelect,
+  onQuickShipToggle,
+}) => {
   const [searchText, setSearchText] = useState("");
   const [shapeFilter, setShapeFilter] = useState("");
   const [colorFilter, setColorFilter] = useState("");
@@ -14,7 +22,6 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
     setSearchText(value);
 
     if (onSearch) onSearch(value);
-    
   };
 
   const handleShapeClick = (shape) => () => {
@@ -30,16 +37,19 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
   const handleClariatyClick = (e) => {
     setClarityFilter(e.target.value);
     if (onClariatySelect) onClariatySelect(e.target.value);
-  }
+  };
 
   const handleCutClick = (e) => {
     setCutFilter(e.target.value);
     if (onCutSelect) onCutSelect(e.target.value);
-  }
+  };
 
   const handleLabClick = (e) => {
     setLabFilter(e.target.value);
-    if (onLabSelect) onLabSelect(e.target.value);  
+    if (onLabSelect) onLabSelect(e.target.value);
+  };
+  const handleQuickShipToggle = (e) => {
+    if (onQuickShipToggle) onQuickShipToggle(e.target.checked);
   }
 
   return (
@@ -106,7 +116,7 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
             gap: "6px",
           }}
         >
-          {["All", "Emerald", "Princess", "Round","Marquise"].map((shape) => (
+          {["All", "Emerald", "Princess", "Round", "Marquise"].map((shape) => (
             <button
               key={shape}
               onClick={handleShapeClick(shape)}
@@ -182,8 +192,8 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
         </h5>
 
         <select
-        value={colorFilter}
-        onChange={handleColorClick}
+          value={colorFilter}
+          onChange={handleColorClick}
           style={{
             width: "100%",
             padding: "8px",
@@ -213,8 +223,8 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
         </h5>
 
         <select
-        value={clarityFilter}
-        onChange={handleClariatyClick}
+          value={clarityFilter}
+          onChange={handleClariatyClick}
           style={{
             width: "100%",
             padding: "8px",
@@ -245,8 +255,8 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
         </h5>
 
         <select
-        value={cutFilter}
-        onChange={handleCutClick}
+          value={cutFilter}
+          onChange={handleCutClick}
           style={{
             width: "100%",
             padding: "8px",
@@ -276,8 +286,8 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
         </h5>
 
         <select
-        value={labFilter}
-        onChange={handleLabClick}
+          value={labFilter}
+          onChange={handleLabClick}
           style={{
             width: "100%",
             padding: "8px",
@@ -293,7 +303,7 @@ const Sidebar = ({ onSearch,onShapeSelect,oncolorSelect,onClariatySelect,onCutSe
         </select>
 
         <div style={{ marginTop: "6px" }}>
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleQuickShipToggle} />
           <label style={{ marginLeft: "4px", fontSize: "13px" }}>
             Quick Ship only
           </label>
