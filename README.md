@@ -22,11 +22,11 @@ Deploy link:-
 
 https://jewelrydesignstudiobyvijay.netlify.app/
 
-Tech used:-React JS
-Css:-Plain CSS
-state management:-Context Api
-storage:-local storage(brower)
-database:-locally created
+Tech used:-React JS<br>
+Css:-Plain CSS<br>
+state management:-Context Api<br>
+storage:-local storage(brower)<br>
+database:-locally created<br>
 
 #Components:-
 1.Header:-Top navigation and branding
@@ -40,6 +40,7 @@ database:-locally created
 3.Diamond Design:-Detailed design page with options(setting)
 4.Summary:-Shows selected diamond and settings before checkout
 5.My OrderPage:-Displays all completed orders stored in localStorage
+6.My Cart:-Display all Produts added in cart
 
 #Functionality:-
 1.Render all product card
