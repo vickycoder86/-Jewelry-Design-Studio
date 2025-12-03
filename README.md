@@ -48,4 +48,6 @@ database:-locally created<br>
 3.filter<br>
 4.Price range(min to max)<br>
 5.search(with orderID)<br>
-3.Qucik preview(modal)<br>
+6.Quick Product preview(modal)<br>
+7.Product Add to cart<br>
+8.Product remove from cart<br>
