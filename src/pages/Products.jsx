@@ -71,6 +71,7 @@ const Products = () => {
     setCaratMin(min);
     setCaratMax(max);
   };
+  
   // Final filtering logic
   const finalFilteredData = Diamonds.filter((diamond) => {
     const matchSearch = diamond.id.toUpperCase().includes(search.toUpperCase());

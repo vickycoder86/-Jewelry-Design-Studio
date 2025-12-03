@@ -34,7 +34,7 @@ const MyOrders = () => {
 
   return (
     <>
-    <div style={{margin:"15px"}}>My orders</div>
+    <div style={{margin:"15px",fontSize:"24px",fontWeight:"600"}}>My orders</div>
     <div><input style={{padding:'5px',margin:"15px",width:"29%",borderRadius:"5px"}} 
    type="text" value={inputValue}  onChange={(e) => setInputValue(e.target.value)} placeholder='Search order with orderID..' /></div>
     {filteredOrders.length===0 ? (<p>No orders found</p>):(

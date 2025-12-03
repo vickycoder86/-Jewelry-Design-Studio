@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { productContext } from "../context/MainContext";
 
 const DimandProdcutCard = ({ diamond, onQuickView }) => {
+  const { cart, setCart } = useContext(productContext);
+
+  const handleAddToCart = (diamond) => () => {
+    const existingItem = cart.find((item) => item.id === diamond.id);
+
+    if (existingItem) {
+      alert("Item is already in the cart..!");
+      return;
+    }
+
+    const updatedCart = [...cart, { ...diamond, quantity: 1 }];
+
+    setCart(updatedCart);
+    alert("Item added to cart!");
+  };
+
   return (
     <div
       style={{
@@ -34,7 +51,6 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
           height: "150px",
           objectFit: "cover",
           borderRadius: "12px",
-          
         }}
       />
       <h2
@@ -86,34 +102,33 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
       </button>
 
       <div style={{ display: "flex", gap: "6px", marginTop: "4px" }}>
-       <Link to={`/diamonddesign/${diamond.id}`}>
-       <button
-          style={{
-            flex: 1,
-            padding: "8px",
-            borderRadius: "10px",
-            background: "#10b981",
-            color: "#fff",
-            border: "none",
-            fontSize: "13px",
-            fontWeight: "600",
-            cursor: "pointer",
-            transition: "background 0.2s",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = "#059669")}
-          onMouseLeave={(e) => (e.currentTarget.style.background = "#10b981")}
-
-        >
-          Add to Cart
-        </button>
+        <Link to={`/diamonddesign/${diamond.id}`}>
+          <button
+            style={{
+              flex: 1,
+              padding: "8px",
+              borderRadius: "10px",
+              background: "#10b981",
+              color: "#fff",
+              border: "none",
+              fontSize: "13px",
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#059669")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#10b981")}
+          >
+            BUY NOW
+          </button>
         </Link>
         <button
           style={{
             flex: 1,
             padding: "8px",
             borderRadius: "10px",
-            background: "#f3f4f6",
-            color: "#111827",
+            background: "#d2f009ff",
+            color: "#272611ff",
             border: "1px solid #d1d5db",
             fontSize: "13px",
             fontWeight: "600",
@@ -128,8 +143,9 @@ const DimandProdcutCard = ({ diamond, onQuickView }) => {
             e.currentTarget.style.background = "#f3f4f6";
             e.currentTarget.style.color = "#111827";
           }}
+          onClick={handleAddToCart(diamond)}
         >
-          Add to Compare
+          ADD TO CART
         </button>
       </div>
     </div>

@@ -130,7 +130,7 @@ const Sidebar = ({
             gap: "6px",
           }}
         >
-          {["All", "Emerald", "Princess", "Round", "Marquise"].map((shape) => (
+          {["All", "Emerald", "Princess","Marquise"].map((shape) => (
             <button
               key={shape}
               onClick={handleShapeClick(shape)}
