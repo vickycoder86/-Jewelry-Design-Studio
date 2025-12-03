@@ -25,7 +25,7 @@ https://jewelrydesignstudiobyvijay.netlify.app/
 #Tech used:-React JS<br>
 Css:-Plain CSS<br>
 state management:-Context Api<br>
-storage:-local storage(brower)<br>
+storage:-local storage(browser)<br>
 database:-locally created<br>
 
 #Components:-<br>
