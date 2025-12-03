@@ -22,30 +22,30 @@ Deploy link:-
 
 https://jewelrydesignstudiobyvijay.netlify.app/
 
-Tech used:-React JS<br>
+#Tech used:-React JS<br>
 Css:-Plain CSS<br>
 state management:-Context Api<br>
 storage:-local storage(brower)<br>
 database:-locally created<br>
 
-#Components:-
-1.Header:-Top navigation and branding
-2.Sidebar:-Filters for diamonds (shape, color, clarity, cut, etc.)
-3.Footers:Basic footer layout
-4.DiamandProductCard:-Displays individual diamond details
+#Components:-<br>
+1.Header:-Top navigation and branding.<br>
+2.Sidebar:-Filters for diamonds (shape, color, clarity, cut, etc.).<br>
+3.Footers:Basic footer layout.<br>
+4.DiamandProductCard:-Displays individual diamond details.<br>
 
-#Pages:-
-1.Products:-All diamond listings with filters
-2.Diamond Quick view:-Fast preview with specifications
-3.Diamond Design:-Detailed design page with options(setting)
-4.Summary:-Shows selected diamond and settings before checkout
-5.My OrderPage:-Displays all completed orders stored in localStorage
-6.My Cart:-Display all Produts added in cart
+#Pages:-<br>
+1.Products:-All diamond listings with filters.<br>
+2.Diamond Quick view:-Fast preview with specifications.<br>
+3.Diamond Design:-Detailed design page with options(setting).<br>
+4.Summary:-Shows selected diamond and settings before checkout.<br>
+5.My OrderPage:-Displays all completed orders stored in localStorage.<br>
+6.My Cart:-Display all Produts added in cart.<br>
 
-#Functionality:-
-1.Render all product card
-2.searching
-3.filter
-4.Price range(min to max)
-5.search(with orderID)
-3.Qucik preview(modal)
+#Functionality:-<br>
+1.Render all product card<br>
+2.searching<br>
+3.filter<br>
+4.Price range(min to max)<br>
+5.search(with orderID)<br>
+3.Qucik preview(modal)<br>
